@@ -1,0 +1,100 @@
+<div class="sign-up">
+  <div class="title">
+    <div class="row g-0">
+      <div class="col-4">
+        <h1 class="title">Aggro</h1>
+      </div>
+      <div class="col-4">
+        <i class="bi bi-shield-fill-check car"></i>
+      </div>
+      <div class="col-4">
+        <h1 class="title">Shield</h1>
+      </div>
+    </div>
+  </div>
+
+  <form class="form-container w-50 mt-2" (ngSubmit)="onSubmit()">
+    <!-- First Row -->
+    <div class="row-container">
+      <div class="input-container">
+        <i class="bi bi-person icon"></i>
+        <input type="text" [(ngModel)]="firstName" name="firstName" placeholder="FIRSTNAME" class="input-field" required />
+      </div>
+      <div class="input-container">
+        <i class="bi bi-person icon"></i>
+        <input type="text" [(ngModel)]="lastName" name="lastName" placeholder="LASTNAME" class="input-field" required />
+      </div>
+    </div>
+
+    <!-- Second Row -->
+    <div class="row-container">
+      <div class="input-container">
+        <i class="bi bi-person icon"></i>
+        <input type="text" [(ngModel)]="username" name="username" placeholder="USERNAME" class="input-field" required />
+      </div>
+      <div class="input-container">
+        <i class="bi bi-telephone icon"></i>
+        <input
+          type="tel"
+          [(ngModel)]="phoneNumber"
+          name="phoneNumber"
+          placeholder="PHONE NUMBER"
+          class="input-field"
+          pattern="(\+201|01)[0-9]{9}" 
+          required
+          title="Phone number must be in the format +201xxxxxxxxx or 01xxxxxxxxx"
+        />
+      </div>
+    </div>
+
+    <!-- Third Row -->
+    <div class="row-container">
+      <div class="input-container">
+        <i class="bi bi-envelope icon"></i>
+        <input type="email" [(ngModel)]="email" name="email" placeholder="EMAIL" class="input-field" required />
+      </div>
+      <div class="input-container">
+        <i class="bi bi-lock icon"></i>
+        <input type="password" [(ngModel)]="password" name="password" placeholder="PASSWORD" class="input-field" required />
+      </div>
+    </div>
+
+    <!-- Fourth Row -->
+    <div class="row-container">
+      <div class="input-container">
+        <i class="bi bi-lock icon"></i>
+        <input
+          type="password"
+          [(ngModel)]="confirmPassword"
+          name="confirmPassword"
+          placeholder="CONFIRM PASSWORD"
+          class="input-field"
+          required
+        />
+      </div>
+      <div class="input-container">
+        <i class="bi bi-hash icon"></i>
+        <input
+          type="number"
+          [(ngModel)]="vehicleNumber"
+          name="vehicleNumber"
+          placeholder="CAR NUMBER"
+          class="input-field"
+          required
+        />
+      </div>
+    </div>
+
+    <!-- Fifth Row -->
+    <div class="row-container">
+      <div class="input-container">
+        <i class="bi bi-car-front icon"></i>
+        <input type="text" [(ngModel)]="carModel" name="carModel" placeholder="CAR MODEL" class="input-field" required />
+      </div>
+    </div>
+
+    <button type="submit" class="btn">SIGN UP</button>
+  </form>
+
+  
+</div>

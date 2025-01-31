@@ -1,0 +1,112 @@
+<div class="layout-container">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <i class="bi bi-shield-fill-check"></i>
+      <h3>AggroShield</h3>
+    </div>
+    <div class="sidebar-sections">
+      <div class="sidebar-section">
+        <h4>
+          <i class="bi bi-house-door me-2"></i> HOME
+        </h4>
+        <ul class="sidebar-menu">
+          <li class="sidebar-item" (click)="setActive('dashboard')" [class.active]="activeLink === 'dashboard'">
+            <a routerLink="/dashboard" routerLinkActive="active">
+              <i class="fas fa-th-large"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="sidebar-section">
+        <h4>
+          <i class="bi bi-gear-fill me-2"></i> SETTINGS
+        </h4>
+        <ul class="sidebar-menu">
+          <li class="sidebar-item">
+            <a (click)="logout()">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              <span>Log out</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="navbar-container">
+      <div class="navbar-left">
+        
+      </div>
+      <div class="navbar-right">
+        <div class="user-profile" (click)="navigateToUserProfile()">
+          <img src="assets/images/user.png" alt="User Profile" />
+          <span>{{fullName}}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Welcome Section -->
+    <div class="welcome-section mt-5">
+      <h1>Welcome, {{ fullName }}!</h1>
+    </div>
+
+    <!-- PDF Report Generation Card -->
+    <div class="pdf-report-container">
+      <div class="pdf-content">
+        <h2 class="welcome-text">Generate Your PDF Report</h2>
+        <p class="description-text">
+          Download weekly or monthly performance reports in PDF format.
+        </p>
+        <div class="actions">
+          <select class="report-filter" [(ngModel)]="selectedReportType">
+            <option value="week">Weekly Report</option>
+            <option value="month">Monthly Report</option>
+          </select>
+          <button class="generate-button bg-success" (click)="generateReport()">Generate</button>
+        </div>
+        <div class="message-container">
+          <p *ngIf="loading" class="loading-text">
+            <span class="spinner"></span> Generating your report...
+          </p>
+          <p *ngIf="error" class="error-text">
+            <span>&#9888;</span> {{ error }}
+          </p>
+          <p *ngIf="success" class="success-text">
+            <span>&#10004;</span> Report generated successfully!
+          </p>
+        </div>
+      </div>
+      <div class="pdf-image">
+        <img src="assets/images/pdf (1).png" alt="PDF Report" />
+      </div>
+    </div>
+
+    <!-- Alerts Table -->
+    <div class="alerts-table" *ngIf="alerts && alerts.length > 0">
+      <h3 class="mb-4">Alert Details</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Alert_ID</th>
+            <th>Created At</th>
+            <th>User Email</th>
+            <th>Car Model</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let alert of alerts">
+            <td>{{ alert.id }}</td>
+            <td>{{ alert.createdAt | date: 'short' }}</td>
+            <td>{{ alert.userEmail }}</td>
+            <td>{{ alert.carModel }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

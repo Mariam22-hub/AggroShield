@@ -1,0 +1,99 @@
+<div class="layout-container">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <i class="bi bi-shield-fill-check"></i>
+      <h3>AggroShield</h3>
+    </div>
+    <div class="sidebar-sections">
+      
+      <div class="sidebar-section">
+        <h4>
+          <i class="bi bi-layout-text-sidebar-reverse me-2"></i> SECTIONS
+        </h4>
+        <ul class="sidebar-menu">
+          <li  class="sidebar-item" (click)="setActive('drivers')" [class.active]="activeLink === 'drivers'">
+            <a routerLink="/drivers" routerLinkActive="active">
+              <i class="fa-solid fa-user"></i>
+              <span>Drivers</span>
+            </a>
+          </li>
+          
+          <li class="sidebar-item" (click)="setActive('alerts')" [class.active]="activeLink === 'alerts'">
+            <a routerLink="/alerts" routerLinkActive="active">
+              <i class="fa-solid fa-bell"></i>
+              <span>Alarms</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <h4>
+          <i class="bi bi-gear-fill me-2"></i> SETTINGS
+        </h4>
+        <ul class="sidebar-menu">
+          <li class="sidebar-item">
+            <a (click)="logout()">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              <span>Log out</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Navbar -->
+    <div class="navbar-container">
+      <div class="navbar-left">
+        
+      </div>
+      <div class="navbar-right">
+        <div class="user-profile">
+          <img src="assets/images/user.png" alt="User Profile" />
+          <span>User Profile</span>
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- Drivers Table -->
+    <div class="reports-container">
+      <h3 class="driver-text">Drivers</h3>
+      <table mat-table [dataSource]="dataSource" matSort class="reports-table">
+        <!-- Full Name Column -->
+        <ng-container matColumnDef="fullName">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Full Name</th>
+          <td mat-cell *matCellDef="let driver">{{ driver.fullName }}</td>
+        </ng-container>
+
+        <!-- Car Model Column -->
+        <ng-container matColumnDef="carModel">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Car Model</th>
+          <td mat-cell *matCellDef="let driver">{{ driver.carModel }}</td>
+        </ng-container>
+
+        <!-- Car Number Column -->
+        <ng-container matColumnDef="carNumber">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Car Number</th>
+          <td mat-cell *matCellDef="let driver">{{ driver.carNumber }}</td>
+        </ng-container>
+
+        <!-- Table Header and Rows -->
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr
+          mat-row
+          *matRowDef="let row; columns: displayedColumns;"
+          (click)="navigateToProfile(row.id)"
+          style="cursor: pointer;"
+        ></tr>
+      </table>
+
+      <!-- Paginator -->
+      <mat-paginator [length]="dataSource.data.length" [pageSize]="5" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons>
+      </mat-paginator>
+    </div>
+  </div>
+</div>

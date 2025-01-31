@@ -1,0 +1,141 @@
+.sign-up {
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: auto;
+  align-items: center;
+  background-color: #7b88ff;
+  color: white;
+  overflow: hidden;
+}
+.title .row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+
+h1 {
+  font-family: "Poppins", sans-serif; /* Font Family */
+  font-weight: bold; /* Bold */
+  font-size: 50px; /* Font Size */
+  line-height: 11px; /* Line Height */
+  letter-spacing: 0.5px; /* Letter Spacing */
+  text-align: left; /* Default Alignment */
+  cursor: default;
+}
+.car {
+  font-size: 100px;
+  margin-left: 7.5px;
+  cursor: default;
+}
+
+.logo {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  cursor: default;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 300px;
+}
+
+.input-field {
+  background-color: transparent;
+  padding: 0.8rem;
+  padding-left: 34px;
+  border-radius: 20px;
+  border: solid;
+  border-color: white;
+  outline: none;
+  border-width: 0.001px;
+  width: 300px;
+  height: 30px;
+
+  font-family: "Montserrat", sans-serif; /* Montserrat Font */
+  font-weight: 300; /* Light */
+  font-size: 12px; /* Font size */
+  line-height: 20px; /* Line height */
+  letter-spacing: 0px; /* Letter spacing */
+  text-align: left; /* Default alignment */
+}
+input {
+  padding-left: 70px;
+  color: white;
+}
+input::placeholder {
+  color: white;
+}
+
+.btn {
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px;
+  background-color: white;
+  color: #7b88ff;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.login-link {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+p {
+  cursor: default;
+}
+a {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.input-container {
+  position: relative;
+  width: 300px; /* Adjust as needed */
+}
+
+/* Style for the icon */
+.input-container .icon {
+  position: absolute;
+  left: 10px; /* Adjust to position the icon */
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 16px;
+}
+span {
+  cursor: pointer;
+}
+/* Wrapper for each row of inputs */
+.row-container {
+  display: flex;
+  justify-content: space-between; /* Space between inputs */
+  gap: 1rem; /* Gap between inputs */
+  margin-bottom: 1rem; /* Spacing between rows */
+}
+
+/* Adjust input-container to fit half the width */
+.row-container .input-container {
+  flex: 1; /* Make both inputs in the row equal width */
+}
+
+/* Input adjustments for two-per-row layout */
+.input-field {
+  width: 100%; /* Input takes full width of container */
+  height: 40px; /* Adjust height if needed */
+}
+
+.input-container .icon {
+  font-size: 18px; /* Adjust icon size */
+}

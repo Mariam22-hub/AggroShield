@@ -1,0 +1,83 @@
+<div class="sign-up">
+  <div class="title">
+    <div class="row g-0">
+      <div class="col-4">
+        <h1 class="title">Aggro</h1>
+      </div>
+      <div class="col-4">
+        <i class="bi bi-shield-fill-check car"></i>
+      </div>
+      <div class="col-4">
+        <h1 class="title">Shield</h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- Login Form -->
+  <form class="form-container mt-2" (ngSubmit)="onSubmit()">
+    <!-- Username Input -->
+    <div class="input-container">
+      <i class="bi bi-envelope icon"></i>
+      <input
+        type="text"
+        [(ngModel)]="username"
+        name="username"
+        placeholder="Enter your username"
+        class="input-field"
+        required
+      />
+    </div>
+
+    <!-- Password Input -->
+    <div class="input-container">
+      <i class="bi bi-lock icon"></i>
+      <input
+        type="password"
+        [(ngModel)]="password"
+        name="password"
+        placeholder="Enter your password"
+        class="input-field"
+        required
+      />
+    </div>
+
+    <!-- Role Selection -->
+    <div class="input-container">
+      <i class="bi bi-person-badge icon"></i>
+      <select
+        [(ngModel)]="role"
+        name="role"
+        class="input-field"
+        required
+      >
+        <option value="" disabled>SELECT ROLE</option>
+        <option value="User">User</option>
+        <option value="Admin">Admin</option>
+      </select>
+    </div>
+
+    <!-- Submit Button -->
+    <button
+      type="submit"
+      class="btn"
+      [disabled]="!username || !password || !role"
+    >
+      Login
+    </button>
+  </form>
+
+  <!-- Error Message -->
+  <p
+    *ngIf="errorMessage"
+    class="error-message"
+    role="alert"
+    aria-live="assertive"
+  >
+    {{ errorMessage }}
+  </p>
+
+  <!-- Signup Link -->
+  <p class="login-link">
+    Don’t have an account? <a routerLink="/signup">Signup</a>
+  </p>
+</div>

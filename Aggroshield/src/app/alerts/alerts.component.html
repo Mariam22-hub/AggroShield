@@ -1,0 +1,84 @@
+<div class="layout-container">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <i class="bi bi-shield-fill-check"></i>
+      <h3>AggroShield</h3>
+    </div>
+    <div class="sidebar-sections">
+      
+      <div class="sidebar-section">
+        <h4>
+          <i class="bi bi-layout-text-sidebar-reverse me-2"></i> SECTIONS
+        </h4>
+        <ul class="sidebar-menu">
+          <li class="sidebar-item" (click)="setActive('drivers')" [class.active]="activeLink === 'drivers'">
+            <a routerLink="/drivers" routerLinkActive="active">
+              <i class="fa-solid fa-user"></i>
+              <span>Drivers</span>
+            </a>
+          </li>
+          
+          <li class="sidebar-item" (click)="setActive('alerts')" [class.active]="activeLink === 'alerts'">
+            <a routerLink="/alerts" routerLinkActive="active">
+              <i class="fa-solid fa-bell"></i>
+              <span>Alarms</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <h4>
+          <i class="bi bi-gear-fill me-2"></i> SETTINGS
+        </h4>
+        <ul class="sidebar-menu">
+          <li class="sidebar-item">
+            <a (click)="logout()">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              <span>Log out</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="navbar-container">
+      <div class="navbar-left">
+        
+      </div>
+      <div class="navbar-right">
+        <div class="user-profile">
+          <img src="assets/images/user.png" alt="User Profile" />
+          <span>User Profile</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Alerts Table -->
+    <div class="alerts-table" *ngIf="alerts && alerts.length > 0">
+      <h3 class="mb-4">Alert Details</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Alert_ID</th>
+            <th>Created At</th>
+            <th>User Email</th>
+            <th>Car Model</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let alert of alerts">
+            <td>{{ alert.id }}</td>
+            <td>{{ alert.createdAt | date: 'short' }}</td>
+            <td>{{ alert.userEmail }}</td>
+            <td>{{ alert.carModel }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
