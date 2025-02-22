@@ -1,0 +1,3 @@
+com\example\ApiGateway.class
+com\example\controller\FallbackController.class
+com\example\config\GatewayConfig.class

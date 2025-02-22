@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aggressive Driving Alert</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            color: #333333;
+        }
+        .header {
+            text-align: center;
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 15px 0;
+            border-radius: 10px 10px 0 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .content {
+            padding: 20px;
+        }
+        .alert {
+            background-color: #ffe4e1;
+            border: 1px solid #ffcccc;
+            padding: 15px;
+            border-radius: 5px;
+            color: #cc0000;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .details {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border-radius: 0 0 10px 10px;
+            font-size: 14px;
+            color: #666666;
+        }
+        .footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>Aggressive Driving Alert</h1>
+    </div>
+    <div class="content">
+        <p>Dear <strong><span th:text="${fullName}"></span></strong>,</p>
+        <div class="alert">
+            Warning: Aggressive Driving Behavior Detected!
+        </div>
+        <p>We noticed that your driving behavior has shown signs of aggressive tendencies. Please review your recent driving activity:</p>
+        <div class="details">
+            <p><strong>Driver Name:</strong> <span th:text="${fullName}"></span></p>
+<!--            <p><strong>Vehicle:</strong> <span th:text="${carModel}"></span> (<span th:text="${vehicleNumber}"></span>)</p>-->
+            <p><strong>Vehicle Number:</strong> <span th:text="${vehicleNumber}"></span></p>
+        </div>
+        <p>Please ensure a safer driving approach to avoid potential risks. If you have any questions, feel free to contact our support team.</p>
+    </div>
+    <div class="footer">
+        <p>Stay safe and drive responsibly!</p>
+        <p>&copy; 2024 SmartMotion. All rights reserved. <a href="https://smartmotion.com">Visit us</a></p>
+    </div>
+</div>
+</body>
+</html>
