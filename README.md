@@ -10,7 +10,7 @@ AggroShield is a full-stack application built using **Spring Boot** for detectin
 - **Dashboard**: A user-friendly interface displaying detected events, vehicle analytics, and historical trends.  
 - **Weekly & Monthly Reports**: Generates detailed reports summarizing driving behavior over time.  
 - **FastAPI Integration**: Uses a **FastAPI-based microservice** to serve the ML model efficiently.  
-- **Full-Stack Implementation**: Powered by **Spring Boot (Backend)** and a modern **frontend framework (React/Angular/Vue)**.  
+- **Full-Stack Implementation**: Powered by **Spring Boot (Backend)** and a modern **frontend framework (Angular)**.  
 
 ## 🛠️ Tech Stack  
 
